@@ -1,0 +1,135 @@
+.home {
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+  top: 160px;
+  left: 0;
+  &__body {
+    text-align: center;
+  }
+
+  &__title {
+    display: block;
+    position: relative;
+    padding: 155px 0 50px 0;
+    margin: 0 0 290px 0;
+    color: #ffffff;
+    @include adaptiv-font(34, 16);
+    font-weight: 900;
+    line-height: 40px;
+    text-transform: uppercase;
+    letter-spacing: 5.43px;
+    span {
+      display: block;
+      padding: 10px 0 0 0;
+      @include adaptiv-font(26, 12);
+      text-transform: none;
+      letter-spacing: 4.15px;
+    }
+    ::before {
+      content: "";
+      width: 105px;
+      height: 2px;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      margin: 0 0 0 -50px;
+      background-color: white;
+    }
+  }
+
+  &__arrow {
+    position: relative;
+    display: block;
+    margin: 93px 0 0 0;
+    animation: arrow 1.8s infinite ease;
+  }
+  @keyframes arrow {
+    0% {
+      top: 0;
+    }
+    50% {
+      top: 10px;
+    }
+    100% {
+      top: 0;
+    }
+  }
+
+  @media (max-width: 767px) {
+    top: 95px;
+    &__title {
+      padding: 75px 0 35px 0;
+      font-weight: 900;
+      line-height: 40px;
+      margin: 0 0 170px 0;
+    }
+    &__arrow {
+      margin: 60px 0 0 0;
+    }
+  }
+  @media (max-width: 375px) {
+    top: 35px;
+    &__title {
+      padding: 65px 0 25px 0;
+      font-weight: 900;
+      line-height: 30px;
+      margin: 0 0 80px 0;
+    }
+    &__arrow {
+      margin: 35px 0 0 0;
+    }
+  }
+}
+
+.btn {
+  position: relative;
+  display: inline-flex;
+  height: 47px;
+  padding: 0 42px;
+  align-items: center;
+  @include adaptiv-font(16, 14);
+  text-transform: uppercase;
+  letter-spacing: 0.67px;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: scale(0);
+  }
+  span {
+    position: relative;
+    z-index: 1;
+  }
+  &-w {
+    color: #ffffff;
+    border: 1px solid white;
+    &::before {
+      background-color: #ffffff;
+    }
+  }
+  &-b {
+    color: black;
+    border: 1px solid black;
+    &::before {
+      background-color: black;
+    }
+  }
+  &:hover {
+    &.btn-w {
+      color: black;
+    }
+    &::before {
+      transform: scale(1);
+    }
+    &.btn-b {
+      color: white;
+    }
+    &::before {
+      transform: scale(1);
+    }
+  }
+}

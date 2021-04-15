@@ -1,0 +1,99 @@
+.contact {
+  padding: 185px 0 100px 0;
+  &__title {
+  }
+
+  &__body {
+    display: flex;
+    justify-content: center;
+    margin: 120px 0 0 0;
+  }
+
+  &__row {
+    display: flex;
+    margin: 0 40px 0 0;
+  }
+
+  &__form {
+  }
+
+  &__content {
+    max-width: 285px;
+    margin: 0 0 0 40px;
+  }
+
+  &__text {
+  }
+
+  &__name {
+  }
+
+  &__soc {
+  }
+
+  &__email {
+  }
+}
+
+.form-contact {
+  display: flex;
+  flex-direction: column;
+  &__body {
+    max-width: 385px;
+  }
+
+  &__row {
+    display: flex;
+    margin: 0 -15px;
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 50%;
+    padding: 0 15px;
+  }
+
+  &__label {
+    margin: 0 0 20px 0;
+    color: #000000;
+    font-family: Lato;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: start;
+    text-transform: uppercase;
+    letter-spacing: 0.84px;
+  }
+
+  &__input {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 100%;
+  }
+
+  &__btn {
+  }
+}
+.input {
+  display: block;
+  height: 35px;
+  margin: 0 0 75px 0;
+  padding: 0 15px;
+  border-top: 1px solid black;
+  background-color: #f8f7f7;
+}
+textarea.input {
+  resize: none;
+  height: 118px;
+  margin: 0 0 40px 0;
+  padding: 10px 15px;
+}
+
+.column {
+  &__content {
+  }
+}
+.soc-contact {
+  &__link {
+  }
+}

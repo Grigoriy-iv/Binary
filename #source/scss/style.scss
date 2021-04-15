@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap");
+@import "nullstyle";
+@import "adaptive-fonts";
+@import "ibg-slider";
+@import "home";
+@import "navigation";
+@import "about";
+@import "portfolio";
+@import "partners";
+@import "contact";
+
+body {
+  font-family: "Lato";
+  &.lock {
+    overflow: hidden;
+  }
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1100px;
+  padding: 0 15px;
+  margin: 0px auto;
+}
+
+.page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-screen {
+  flex: 1 0 100%;
+  position: relative;
+  &__image {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+}
+
+.content {
+  background: #fff;
+  position: relative;
+  z-index: 25;
+}

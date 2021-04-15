@@ -1,0 +1,40 @@
+.navigation {
+  padding: 42px 0;
+
+  &__link {
+    color: #3c3c3c;
+    &.active {
+      color: #ada074;
+    }
+  }
+
+  @media (max-width: 539px) {
+    padding: 25px 0;
+    &__links {
+      flex: 0 1 50%;
+      text-align: center;
+    }
+  }
+}
+
+.list-all {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  @media (max-width: 539px) {
+    &__ li:nth-child(3) {
+      margin: 10px 0 0 0;
+    }
+    li:nth-child(4) {
+      margin: 10px 0 0 0;
+    }
+  }
+}
+
+.link {
+  margin: 0 25px;
+  @include adaptiv-font(15, 12);
+  text-transform: uppercase;
+  font-weight: 700;
+}

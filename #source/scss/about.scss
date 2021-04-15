@@ -1,0 +1,120 @@
+.about {
+  padding: 130px 0 95px 0;
+  &__header {
+    margin: 0 0 65px 0;
+  }
+
+  &__title {
+    margin: 0 0 30px 0;
+  }
+
+  &__text {
+    color: #868585;
+    @include adaptiv-font(14, 12);
+    font-weight: 300;
+    text-align: center;
+    line-height: 25.89px;
+    margin: 0px 82px;
+  }
+
+  &__row {
+    display: flex;
+  }
+
+  &__column {
+    padding: 0 15px;
+    flex: 0 0 33.333%;
+  }
+  @media (max-width: 1100px) {
+    padding: 100px 0 75px 0;
+    &__header {
+      margin: 0 0 45px 0;
+    }
+    &__title {
+      margin: 0 0 20px 0;
+    }
+    &__text {
+      margin: 0px 72px;
+    }
+  }
+  @media (max-width: 767px) {
+    padding: 30px 0 20px 0;
+    &__header {
+      margin: 0 0 45px 0;
+    }
+    &__title {
+      margin: 0 0 20px 0;
+    }
+    &__text {
+      margin: 0px auto;
+    }
+    &__row {
+      display: flex;
+      flex-direction: column;
+    }
+    &__column {
+      padding: 0 0 35px 0;
+    }
+  }
+}
+
+.title {
+  @include adaptiv-font(34, 18);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 8.95px;
+  position: relative;
+  text-align: center;
+  padding: 0 0 30px 0;
+  &::after {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 1px;
+    left: 50%;
+    bottom: 0;
+    background-color: black;
+    margin: 0 0 0 -40px;
+  }
+}
+
+.item-about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    border: 2px solid #f1f1f1;
+  }
+
+  &__title {
+    @include adaptiv-font(22, 16);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3.52px;
+    margin: 40px 0 35px 0;
+  }
+
+  &__text {
+    color: #868585;
+    @include adaptiv-font(14, 12);
+    font-weight: 300;
+    line-height: 26px;
+    text-align: center;
+  }
+  @media (max-width: 767px) {
+    &__icon {
+      width: 72px;
+      height: 72px;
+    }
+    &__title {
+      margin: 20px 0 15px 0;
+    }
+  }
+}
