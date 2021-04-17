@@ -1,0 +1,48 @@
+.footer {
+  z-index: 25;
+  padding: 50px 0;
+  background-color: #3c3c3c;
+  &__body {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  &__nav {
+    margin: 40px 0 35px 0;
+  }
+
+  &__link {
+    padding: 0 10px;
+    color: #a4a4a4;
+    font-size: 14px;
+    text-transform: none;
+    &:hover {
+      color: white;
+    }
+  }
+
+  &__text {
+    span {
+      color: #6c6c6c;
+      font-family: "Roboto", sans-serif;
+      font-size: 14px;
+    }
+  }
+  @media (max-width: 767px) {
+    padding: 30px 0;
+  }
+  @media (max-width: 539px) {
+    &__nav {
+      margin: 25px 0 30px 0;
+    }
+    &__links {
+      flex: 0 1 50%;
+    }
+    &__text {
+      span {
+        font-size: 12px;
+      }
+    }
+  }
+}

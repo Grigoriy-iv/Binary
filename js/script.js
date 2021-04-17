@@ -38,28 +38,51 @@ if (isMobile.any()) {
 
 
 // Плавная прокрутка при клике ===========================================
-const menuLinks = document.querySelectorAll(".menu__link[data-goto]");
-if (menuLinks.length > 0) {
-	menuLinks.forEach(menuLink => {
-		menuLink.addEventListener("click", onMenuLinkClick);
-	});
+//#1
+//const menuLinks = document.querySelectorAll(".menu__link[data-goto]");
+//if (menuLinks.length > 0) {
+//	menuLinks.forEach(menuLink => {
+//		menuLink.addEventListener("click", onMenuLinkClick);
+//	});
 
-	function onMenuLinkClick(e) {
-		const menuLink = e.target;
-		if (menuLink.dataset.goto && document.querySelector(menuLink.dataset.goto)) {
-			const gotoBlock = document.querySelector(menuLink.dataset.goto);
-			const gotoBlockValue = gotoBlock.getBoundingClientRect().top + pageYOffset /* - document.querySelector(".header").offsetHeight */;
+//	function onMenuLinkClick(e) {
+//		const menuLink = e.target;
+//		if (menuLink.dataset.goto && document.querySelector(menuLink.dataset.goto)) {
+//			const gotoBlock = document.querySelector(menuLink.dataset.goto);
+//			const gotoBlockValue = gotoBlock.getBoundingClientRect().top + pageYOffset /* - document.querySelector(".header").offsetHeight */;
 
-			window.scrollTo({
-				top: gotoBlockValue,
-				behavior: "smooth"
-			});
-			e.preventDefault();
-		}
-	}
+//			window.scrollTo({
+//				top: gotoBlockValue,
+//				behavior: "smooth"
+//			});
+//			e.preventDefault();
+//		}
+//	}
+//}
+//#2 - Пример из project "Binary" 
+const anchors = document.querySelectorAll("goto[href*='#content']")
+for (let anchor of anchors) {
+	anchor.addEventListener("click", function (e) {
+		const blockID = anchor.getAttribute("href")
+		document.querySelector("" + blockID).scrollIntoView({
+			behavior: "smooth",
+			block: "start"
+		})
+		e.preventDefault();
+	})
 }
 
-//Фильтр
+
+//Параллакс
+//#1 - Пример из project "Binary" 
+$(window).scroll(function (e) {
+	let s = 0 - $(this).scrollTop() / 2.5;
+	$(".home__image").css('transform', 'translate3d(0, ' + s + 'px, 0)');
+});
+
+
+//Фильтр=================================================================
+//#1 - Пример из project "Binary" 
 $(".filter__item").click(function (e) {
 	let i = $(this).data("filter");
 	if (i == 1) {

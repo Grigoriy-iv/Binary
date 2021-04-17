@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 /*Обнуление*/
 * {
   padding: 0;
@@ -127,35 +128,30 @@ h6 {
 /* Активная точка */
 /* Элемент точки */
 .home {
-  position: absolute;
-  width: 100%;
-  z-index: 10;
-  top: 160px;
-  left: 0;
-}
-.home__body {
-  text-align: center;
-}
-.home__title {
-  display: block;
+  flex: 1 0 100%;
   position: relative;
-  padding: 155px 0 50px 0;
-  margin: 0 0 290px 0;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 0;
+}
+.home__content {
+  z-index: 1;
+}
+.home__container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.home__text {
   color: #ffffff;
-  font-size: calc( 16px + 18 * ((100vw - 320px) / 1600) );
-  font-weight: 900;
-  line-height: 40px;
-  text-transform: uppercase;
-  letter-spacing: 5.43px;
+  position: relative;
+  padding: 45px 0;
+  margin: 0 0 75px 0;
 }
-.home__title span {
-  display: block;
-  padding: 10px 0 0 0;
-  font-size: calc( 12px + 14 * ((100vw - 320px) / 1600) );
-  text-transform: none;
-  letter-spacing: 4.15px;
-}
-.home__title ::before {
+.home__text ::before {
   content: "";
   width: 105px;
   height: 2px;
@@ -165,10 +161,25 @@ h6 {
   margin: 0 0 0 -50px;
   background-color: white;
 }
+.home__title {
+  color: #ffffff;
+  font-size: calc( 16px + 18 * ((100vw - 320px) / 1600) );
+  font-weight: 900;
+  line-height: 40px;
+  text-transform: uppercase;
+  letter-spacing: 5.43px;
+}
+.home__title span {
+  padding: 10px 0 0 0;
+  font-size: calc( 12px + 14 * ((100vw - 320px) / 1600) );
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 4.15px;
+}
 .home__arrow {
   position: relative;
   display: block;
-  margin: 93px 0 0 0;
+  margin: 75px 0 0 0;
   animation: arrow 1.8s infinite ease;
 }
 @keyframes arrow {
@@ -182,29 +193,20 @@ h6 {
     top: 0;
   }
 }
+.home__image {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
 @media (max-width: 767px) {
   .home {
-    top: 95px;
+    padding: 35px 0;
   }
-  .home__title {
-    padding: 75px 0 35px 0;
-    font-weight: 900;
-    line-height: 40px;
-    margin: 0 0 170px 0;
-  }
-  .home__arrow {
-    margin: 60px 0 0 0;
-  }
-}
-@media (max-width: 375px) {
-  .home {
-    top: 35px;
-  }
-  .home__title {
-    padding: 65px 0 25px 0;
-    font-weight: 900;
-    line-height: 30px;
-    margin: 0 0 80px 0;
+  .home__text {
+    padding: 30px 0;
+    margin: 0 0 30px 0;
   }
   .home__arrow {
     margin: 35px 0 0 0;
@@ -213,10 +215,11 @@ h6 {
 
 .btn {
   position: relative;
-  display: inline-flex;
+  display: inline-block;
   height: 47px;
   padding: 0 42px;
   align-items: center;
+  line-height: 45px;
   font-size: calc( 14px + 2 * ((100vw - 320px) / 1600) );
   text-transform: uppercase;
   letter-spacing: 0.67px;
@@ -287,7 +290,7 @@ h6 {
   align-items: center;
 }
 @media (max-width: 539px) {
-  .list-all__ li:nth-child(3) {
+  .list-all li:nth-child(3) {
     margin: 10px 0 0 0;
   }
   .list-all li:nth-child(4) {
@@ -296,7 +299,7 @@ h6 {
 }
 
 .link {
-  margin: 0 25px;
+  padding: 0 25px;
   font-size: calc( 12px + 3 * ((100vw - 320px) / 1600) );
   text-transform: uppercase;
   font-weight: 700;
@@ -444,7 +447,9 @@ h6 {
   margin: 0 0 30px 0;
 }
 .portfolio__item img {
-  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .portfolio__footer {
   padding: 35px 0 0 0;
@@ -469,6 +474,10 @@ h6 {
   margin: 50px 0 135px 0;
 }
 .filter__item {
+  padding: 0 25px;
+  font-size: calc( 12px + 3 * ((100vw - 320px) / 1600) );
+  text-transform: uppercase;
+  font-weight: 700;
   color: #3c3c3c;
   cursor: pointer;
 }
@@ -535,33 +544,97 @@ h6 {
   justify-content: center;
   margin: 120px 0 0 0;
 }
-.contact__row {
-  display: flex;
+.contact__user {
+  display: inline-block;
+  text-align: end;
   margin: 0 40px 0 0;
 }
 .contact__content {
   max-width: 285px;
   margin: 0 0 0 40px;
 }
-.form-contact {
-  display: flex;
-  flex-direction: column;
+.contact__text {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 26px;
 }
+.contact__name {
+  margin: 30px 0 0 0;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 26px;
+}
+.contact__soc {
+  display: flex;
+  margin: 25px 0 18px 0;
+}
+.contact__email {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 26px;
+}
+.contact__email a {
+  font-weight: 700;
+  color: #000000;
+}
+@media (max-width: 1100px) {
+  .contact {
+    padding: 135px 0 80px 0;
+  }
+}
+@media (max-width: 767px) {
+  .contact {
+    padding: 100px 0 60px 0;
+  }
+  .contact__body {
+    flex-direction: column;
+    margin: 90px 0 0 0;
+  }
+  .contact__user {
+    margin: 0 40px 0 40px;
+  }
+  .contact__content {
+    margin: 60px 0 0 40px;
+  }
+}
+@media (max-width: 510px) {
+  .contact {
+    padding: 60px 0 60px 0;
+  }
+  .contact__body {
+    flex-direction: column;
+    margin: 70px 0 0 0;
+  }
+  .contact__user {
+    margin: 0;
+    text-align: center;
+  }
+  .contact__content {
+    margin: 60px 0 0 0;
+  }
+  .contact__name {
+    margin: 15px 0 0 0;
+  }
+  .contact__soc {
+    margin: 15px 0 10px 0;
+  }
+}
+
 .form-contact__body {
   max-width: 385px;
 }
 .form-contact__row {
   display: flex;
-  margin: 0 -15px;
+  margin: 0 -14px;
 }
 .form-contact__column {
   display: flex;
   flex-direction: column;
   flex: 0 1 50%;
-  padding: 0 15px;
+  padding: 0 14px;
 }
 .form-contact__label {
-  margin: 0 0 20px 0;
+  margin: 0 0 10px 0;
   color: #000000;
   font-family: Lato;
   font-size: 14px;
@@ -571,10 +644,32 @@ h6 {
   letter-spacing: 0.84px;
 }
 .form-contact__input {
+  font-family: "Roboto";
   display: flex;
   flex-direction: column;
-  flex: 1 1 100%;
 }
+.form-contact__btn {
+  font-weight: 700;
+}
+@media (max-width: 767px) {
+  .form-contact__body {
+    max-width: 100%;
+  }
+}
+@media (max-width: 510px) {
+  .form-contact__row {
+    flex-direction: column;
+  }
+}
+
+input[type=text],
+input[type=email],
+input[type=tel],
+textarea {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
 .input {
   display: block;
   height: 35px;
@@ -583,12 +678,76 @@ h6 {
   border-top: 1px solid black;
   background-color: #f8f7f7;
 }
+.input:focus {
+  border-top: 1px solid green;
+}
+@media (max-width: 767px) {
+  .input {
+    margin: 0 0 40px 0;
+  }
+}
 
 textarea.input {
   resize: none;
   height: 118px;
   margin: 0 0 40px 0;
   padding: 10px 15px;
+}
+
+.soc-contact__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 12px 0 0;
+  width: 29px;
+  height: 29px;
+  border-radius: 50%;
+  border: 2px solid #1e1e1e;
+  background-color: #ffffff;
+}
+
+.footer {
+  z-index: 25;
+  padding: 50px 0;
+  background-color: #3c3c3c;
+}
+.footer__body {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.footer__nav {
+  margin: 40px 0 35px 0;
+}
+.footer__link {
+  padding: 0 10px;
+  color: #a4a4a4;
+  font-size: 14px;
+  text-transform: none;
+}
+.footer__link:hover {
+  color: white;
+}
+.footer__text span {
+  color: #6c6c6c;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+}
+@media (max-width: 767px) {
+  .footer {
+    padding: 30px 0;
+  }
+}
+@media (max-width: 539px) {
+  .footer__nav {
+    margin: 25px 0 30px 0;
+  }
+  .footer__links {
+    flex: 0 1 50%;
+  }
+  .footer__text span {
+    font-size: 12px;
+  }
 }
 
 body {
@@ -599,8 +758,10 @@ body.lock {
 }
 
 .wrapper {
-  min-height: 100%;
-  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .container {
@@ -609,30 +770,7 @@ body.lock {
   margin: 0px auto;
 }
 
-.page {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-}
-
-.main-screen {
-  flex: 1 0 100%;
-  position: relative;
-}
-.main-screen__image {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-}
-
 .content {
   background: #fff;
-  position: relative;
   z-index: 25;
 }
